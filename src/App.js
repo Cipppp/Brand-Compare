@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import ProfileChart from './components/ProfileChart';
 
+//? Get API endpoint and API key from environment variables
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 const API_KEY = process.env.REACT_APP_API_KEY;
 const REQUEST_CONFIG = {
@@ -11,29 +12,23 @@ const REQUEST_CONFIG = {
         Authorization: `Bearer ${API_KEY}`,
     },
 };
-// Request data
-const REQUEST_DATA = {
-    jsonrpc: '2.0',
-    id: 0,
-    method: 'socialinsider_api.get_brands',
-    params: {
-        projectname: 'API_test',
-    },
-};
 
 function App() {
-    // State for data
+    //? State for data
     const [jsonBrandsData, setJsonBrandsData] = useState([]);
 
+    //? Get brands data from API
     const getBrands = () => {
         const requestData = {
-            id: 1,
+            jsonrpc: '2.0',
+            id: 0,
             method: 'socialinsider_api.get_brands',
             params: {
                 projectname: 'API_test',
             },
         };
 
+        //? Fetch data for all brand
         axios
             .post(API_ENDPOINT, requestData, REQUEST_CONFIG)
             .then((response) => {
@@ -46,6 +41,7 @@ function App() {
     };
 
     useEffect(() => {
+        //? Get brands data from API
         getBrands();
     }, []);
 
