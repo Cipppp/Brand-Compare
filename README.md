@@ -1,4 +1,4 @@
-# **React App with Chart.js and API integration**
+# **Brand Compare application**
 
 This is a React web application that retrieves brand data using an API endpoint and displays it in a tabular format. The application utilizes axios to make requests to the API, and state management to update the UI when data is returned. The data is fetched and displayed in a table, which allows the user to view and interact with the data. The table is responsive, and can be viewed on desktop or mobile devices. Additionally, the project includes a CORS proxy to bypass any cross-origin request issues.
 
