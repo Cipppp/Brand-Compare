@@ -17,13 +17,21 @@ git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 2. Install dependencies:
 
 ```
+cd backend
+npm install
+
+cd ../client
 npm install
 ```
 
 3. Start the development server:
 
 ```
+cd client
 npm start
+
+cd ../backend
+node index.js
 ```
 
 4. Access the app in your browser at **http://localhost:3000.**
