@@ -11,7 +11,6 @@ const ProfileChart = ({ jsonBrandsData }) => {
 
     //? Fetch data for all brand data using the selected date range
     const getProfileData = async (brandData, startDate, endDate) => {
-        console.log('Function called');
         const requestData = {
             brandData,
             startDate,
@@ -24,11 +23,9 @@ const ProfileChart = ({ jsonBrandsData }) => {
                 requestData
             );
             const data = response.data;
+            console.log('Profile data: ', data);
             //? Update the state with the new data only if the data is not empty and the brand is not already in the state and update the state when new date is selected
-            console.log(data);
-
             if (data.length > 0) {
-                console.log('length: ' + data.length);
                 //? Check if the brand is already in the state
                 const brandIndex = brandsData.findIndex(
                     (brand) => brand.brandname === data[0].brandname

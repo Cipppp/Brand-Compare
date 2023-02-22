@@ -20,6 +20,7 @@ function App() {
                 }
             );
             const brands = response.data;
+            console.log('Brands data: ', brands);
             setJsonBrandsData(brands);
         } catch (error) {
             console.error(error);
